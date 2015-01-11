@@ -1,0 +1,68 @@
+//==Navbar
+//
+//
+
+.navbar {
+	@media (min-width: @screen-sm) {
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 1px;
+		transition: background 0.5s ease-in-out;
+
+		& li a {
+			background: none;
+			border: none;
+			color: rgba(255, 255, 255, 0.5);
+			cursor: default;
+			&:hover, &:active, &:focus {
+				background: none;
+			}
+
+			span:focus, span:hover {
+			    color: @background-color;
+			    border-bottom: 2px solid @link-color-hover;
+			    cursor: pointer;
+			}
+		}
+
+		& li.active a {
+		    & span, & span:hover {
+				color: @link-color-hover;
+				border: none;
+		    }
+		}
+	}
+}
+
+#navbar-top {
+	text-transform: uppercase;
+	background: rgba(100, 100, 100, 0.5);
+
+	a.navbar-brand {
+		border: none;
+		color: @background-color;
+
+		&:hover, &:focus, &:focus {
+			color: @link-color-hover;
+			border: 0;
+		}	
+	}
+
+	&.navbar-top-offset {
+		background-color: rgba(255, 255, 255, 0.9);
+		transition: all 0.5s ease-in-out;
+
+	    & a.navbar-brand {
+	    	color: #000;
+	    	&:hover {color: @link-color-hover;}
+	    }
+
+	    & li a {
+	    	color: #000;
+			& span:focus,
+			& span:hover {
+				color: @link-color-hover;
+				border: none;
+			}
+	    }
+	}
+}

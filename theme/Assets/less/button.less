@@ -1,0 +1,25 @@
+//== Button
+//
+//## Bootstrap customized button (used in #intro)
+
+.custom-button {
+	background: rgba(200,200,200,0.5);
+	border: 2px solid @link-color-hover;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 1.0em;
+	height: 4tem;
+	line-height: 4em;
+	padding: 0px;
+	color: @background-color;
+	margin-top: 1em;
+	text-transform: uppercase;
+	text-shadow: 2px 2px #000;
+
+	&:hover {
+	    color: @background-color;
+		background: @link-color-hover;
+		transition: all 0.5s ease-in-out;
+		border: 2px solid @link-color-hover;
+	}
+}

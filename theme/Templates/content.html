@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block navbarattributes %}offset="false"{% endblock %}
+
+{% block navbar_contents %}
+	{% if self.toc is defined and self.toc() %}
+		<div class="visible-grid-float-breakpoint">
+			{{ self.toc() }}
+		</div>
+	{% endif %}
+{% endblock %}
+
+{# Content #}
+{% block sections %}
+<section class="container-fluid title">
+	<div class="row">
+		<div class="col-md-12">
+			<h1><a href="{{ pagename }}" rel="bookmark" title="Permalink to {{ permalink_title }}">{% block heading_title %}{% endblock %}</a></h1>
+			<span>
+				<a href="{{ SITEURL }}/index.html"><img src="{{ SITEURL }}/theme/img/me.jpg" class="img-rounded"></img></a>
+			</span>
+		</div>
+	</div>
+</section>
+
+<section class="content">
+	<div class="container">
+		<div class="row">
+			{% if self.toc is defined and self.toc() %}
+				<div class="col-md-3 hidden-grid-float-breakpoint">
+					<nav id="toc-affix">
+						{{ self.toc() }}
+					</nav>
+				</div>
+				<div class="col-md-8 text-left">
+		        	<div class="entry-content">
+						{% block content %}{% endblock %}
+					</div>
+				</div>
+			{% else %}
+				<div class="col-md-8 text-left col-md-offset-2">
+		        	<div class="entry-content">
+						{{ self.content() }}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{# JavaScript #}
+{% block javascript %}
+<script>
+	//Scrollspy object
+	var scrollspies = {
+		'body': {
+			target: '.toc',
+			offset: 500
+		}
+	};
+</script>
+{% endblock %}

@@ -1,0 +1,41 @@
+//== DOM
+//
+//## Standard DOM selector styles
+
+html { //Very important - setting this as 100% allows the front splash image to span the screen
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	position: relative;
+	height: inherit;
+	width: inherit;
+  	color: @text-color;
+  	background-color: @background-color;
+  	-webkit-overflow-scrolling:touch;
+}
+
+a {
+	color: @text-color;
+	border-bottom: 1px dotted @text-color;
+
+	&:hover {
+		color: @link-color-hover;
+		border-bottom: 1px dotted @link-color-hover;
+		text-decoration: none;
+	}
+
+	&:hover, &:active, &:focus {
+		outline: none;
+	}
+}
+
+ul.center-list {
+	display: inline-block;
+	li {
+		text-align: left;
+	}
+}

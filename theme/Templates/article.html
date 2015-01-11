@@ -1,0 +1,26 @@
+{% extends "content.html" %}
+
+{# HTML Page Title #}
+{% block title %}
+	{{ article.title }}
+{% endblock %}
+
+{# Permalink Title #}
+{% set permalink_title = article.title %}
+
+{# Heading Title #}
+{% block heading_title %}
+	{{ article.title }}
+{% endblock %}
+
+{# Table Of Contents #}
+{% if article is defined and article.category == "essay" and article.toc is defined %}
+	{% block toc %}
+		{{ article.toc }}
+	{% endblock %}
+{% endif %}
+
+{# Article Content #}
+{% block content %}
+	{{ article.content }}
+{% endblock %}

@@ -1,0 +1,98 @@
+//
+//Custom CSS For Doctrina - By Barry Steyn
+//-----------------------------------------
+
+//Import Google
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+//Reference Less (font-awesome and bootstrap)
+@import (reference) "Assets/bower_components/font-awesome/less/font-awesome.less";
+@import (reference) "Assets/bower_components/bootstrap/less/bootstrap_custom.less";
+@import (reference) "mixins.less";
+
+//== Element IDs
+//
+//## ID related styles
+
+#connect {
+	background-color: #F2F3F5;
+}
+
+#footer {
+	padding-top: 3em;
+	padding-bottom: 1em;
+}
+
+
+//== Classes
+//
+//## Class styles
+
+.section {
+	padding-top: 4em;
+	padding-bottom: 3em;
+	
+	h2 {
+		color: #333332;
+	}
+
+	@media (min-width: @screen-sm) {
+		font-size: 1.25em;
+		line-height: 2.0em;
+	}
+}
+
+.divider-grey {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 50px;
+    border-top: 2px solid #b3b3b1;
+    padding-bottom: 2.3em;
+}
+
+//== Font Awesome
+//
+//
+a.fa {
+	border: none;
+	color: inherit;
+	text-decoration: none;
+}
+
+//Envelope (for email)
+a.fa-envelope-square:hover {
+	color: #FFD700;
+}
+
+//LinkedIn 
+a.fa-linkedin-square:hover {
+	color: #1985BC; //Copied from LinkedIn website
+}
+
+//GitHub
+a.fa-github-square:hover {
+	color: #4183c4; //Copied from github website
+}
+
+//Twitter
+a.fa-twitter-square:hover {
+	color: #55ACEE; //Copied from twitter website
+}
+
+//== BootStrap Components
+//
+//
+
+@import "variables.less";
+@import "dom.less";
+@import "emphasis.less";
+@import "navbar.less";
+@import "intro.less";
+@import "about.less";
+@import "button.less";
+@import "table_of_contents.less";
+@import "title.less";
+@import "content.less";
+@import "headings.less";

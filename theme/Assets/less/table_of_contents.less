@@ -1,0 +1,128 @@
+//== Table Of Contents
+//
+//## Styles the table of contents for both mobile and desktop
+
+
+//Used to hide or show table of contents for mobile and desktop
+@media (max-width: @grid-float-breakpoint) {
+	.hidden-grid-float-breakpoint {
+		display: none !important;
+	}
+}
+
+@media (min-width: @grid-float-breakpoint) {
+	.visible-grid-float-breakpoint {
+		display: none !important;
+	}
+}
+
+//Hack Add On For Drop Down Menu In Table Of Contents
+div.toc:extend(.nabvar-nav) {
+	@media (max-width: @grid-float-breakpoint) {
+		
+		span.toctitle {
+			display: none;
+		}
+
+		ul {
+			.nav();
+			li {
+				a {
+					color: @background-color;
+					&:hover, &:active, &:focus {
+						outline: none;
+						border: none;
+						background: none;
+					}
+				}			
+			}
+
+			ul {
+				display: none;
+			}
+		}
+	}
+
+	@media (min-width: @grid-float-breakpoint) {
+		margin-left: 1.0em;
+		
+		span.toctitle {
+			position: relative;
+			display: block;
+			left: -1.0em;
+			border-bottom: 1px solid #DDD;
+			margin: 0 0 0.2em 0;
+			font-weight: 700;
+		}
+
+		a {
+			border: none;
+			padding: 0px;
+
+			&:hover, &:active, &:focus {
+				background: none;
+				outline: none;
+			}
+		}
+
+		li.active > a {
+			color: @link-color-hover;
+		}
+
+		ul {
+			line-height: 1.3em;
+			margin-left: 0;
+
+			li {
+				//Font FontAwesome
+				&:before {
+					position: absolute;
+					top: 0.4em;
+					left: -1.1em;
+					font: normal normal normal 14px/1 FontAwesome;
+					border-radius: 50%;
+					content: '\f192'; //Font awesome character
+				}
+
+				&.active {
+					&:before {
+						background-color: @link-color-hover;
+					}
+
+					ul {
+						display: block;
+						ul {
+							display: none; // Do not allow third level to be displayed
+						}
+					}
+				}
+
+				ul {
+					font-size: 0.9em;
+					display: none;
+
+					li {
+						line-height: 1.6em;
+						font-size: 0.9em;
+
+						&:before {
+							top: 0.65em;
+							left: -1.4em;
+							font-size: 0.7em;
+							content: '\f111'; //Font awesome character
+						}
+
+						&.active:before {
+							border-radius: 0;
+							background-color: inherit;
+						}
+					}
+
+					li:last-child {
+						padding-bottom: 0.5em;
+					}
+				}
+			}
+		}
+	}
+}

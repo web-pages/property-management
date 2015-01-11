@@ -1,0 +1,36 @@
+{% extends "content.html" %}
+
+{# HTML Page Title #}
+{% block title %}
+	{{ category }}
+{% endblock %}
+
+{# Heading Title #}
+{% block heading_title %}
+	{{ category }}
+{% endblock %}
+
+{# Category Content #}
+{% block content %}
+	{# Selects Tags And Articles #}
+	{% for tag, articles in tags|sort %}
+		{% for article in articles %}
+			{%- if article.tags|first == tag %}
+				<div class="col-sm-12">
+					<h1 id="{{ tag }}">{{ tag }}</h1>
+				</div>
+				{% for article in articles %}
+					{%- if article.tags|first == tag %}
+						<div class="col-sm-10" style="margin-bottom:0; padding-bottom: 0">
+							<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><br>
+						</div>
+						<div class="col-sm-2" style="margin-top:0; padding-top: 0; font-size:0.6em;"> 
+							{{ article.locale_date }} 
+						</div>
+					{% endif %}
+				{% endfor %}
+				{% break %} 
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+{% endblock %}

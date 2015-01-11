@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{# Navbar #}
+
+{% block navbarattributes %}style="padding: 1.0em 0;"{% endblock %}
+
+{% block navbar_contents %}
+    <div>
+        <ul class="nav navbar-nav">
+    	   <li><a href="#about"><span>About</span></a></li>
+        </ul>
+    </div>
+	{{ super() }}
+{% endblock %}
+
+{# Sections #}
+{% block sections %}
+    <section id="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="jumbotron-heading shadow">Property Management</h1>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="shadow">Are You Trying To Find A Property Manager?</p>
+                            <ul class="fa-ul shadow center-list">
+                                <li>
+                                    <i class="fa-li fa fa-check"></i>
+                                    Do You Think The Fees Are Too High?
+                                </li>
+                               <li>
+                                    <i class="fa-li fa fa-check"></i>
+                                    Does The Service Seem Sub-Standard?
+                                </li>
+                                <li>
+                                    <i class="fa-li fa fa-check"></i>
+                                    Something Here?
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12">
+                            <ul class="fa-ul text-left shadow">
+                                <li>
+                                    <i class="fa-li fa fa-check"></i>
+                                    <p>Are You Unhappy With The Property Management Industry?</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-md-offset-3 col-xs-6 col-xs-offset-3">
+                            <a href="index.html#portfolio" class="btn btn-block custom-button">My Essays</a>
+                        </div>
+                        <div class="col-md-3 col-md-offset-0 col-xs-6 col-xs-offset-3">
+                            <a href="index.html#portfolio" class="btn btn-block custom-button">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="content">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="divider-grey"></div>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1"><!-- Image of myself here --></div>
+                <div class="col-md-8 text-left">
+                    <p>I am a software engineer based in Vancouver, Canada. I am passionate about building things and I get great satisfaction out building software. I also love the building process that is inherent with entrepreneurism. <br> <strong>Doctrina</strong> means "teaching, instruction and learning" in Latin. I believe learning is a life-long process, this site is testament to that fact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{# JavaScript #}
+{% block javascript %}
+<script>
+    //No offset is taken into account when animating page scrolls
+    var noscrollanimateoffset = true;
+</script>
+{% endblock %}

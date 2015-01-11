@@ -1,0 +1,4 @@
+Assets/bower_components/*
+Assets/temp/*
+node_modules
+Output

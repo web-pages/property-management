@@ -1,0 +1,57 @@
+{% extends "content.html" %}
+
+{# HTML Page Title #}
+{% block title %}
+	{{ category }}
+{% endblock %}
+
+{# Heading Title #}
+{% block heading_title %}
+	{{ category }}
+{% endblock %}
+
+{# Table Of Contents #}
+{% if category == "essay" %}
+	{% block toc %}
+		<div class="toc">
+			<ul class="nav">
+				{# Selects First Tags In Alphabetical Order #}
+				{% for tag, articles in tags|sort %}
+					{% for article in articles %}
+						{% if article.category != category %} {% continue %} {% endif %}
+						{% if article.tags|first == tag %}
+							<li><a href="#{{ tag }}">{{ tag }}</a></li>
+							{% break %} 
+						{% endif %}
+					{% endfor %}
+				{% endfor %}
+			</ul>
+		</div>
+	{% endblock %}
+{% endif %}
+
+{# Category Content #}
+{% block content %}
+	{# Selects Tags And Articles #}
+	{% for tag, articles in tags|sort %}
+		{% for article in articles %}
+			{% if article.category != category %} {% continue %} {% endif %}
+			{%- if article.tags|first == tag %}
+				<div class="col-sm-12">
+					<h1 id="{{ tag }}">{{ tag }}</h1>
+				</div>
+				{% for article in articles %}
+					{%- if article.tags|first == tag and article.category == category %}
+						<div class="col-sm-10" style="margin-bottom:0; padding-bottom: 0">
+							<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><br>
+						</div>
+						<div class="col-sm-2" style="margin-top:0; padding-top: 0; font-size:0.6em;"> 
+							{{ article.locale_date }} 
+						</div>
+					{% endif %}
+				{% endfor %}
+				{% break %} 
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+{% endblock %}

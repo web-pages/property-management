@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Presense Of Barry Steyn - Software Engineer">
+    <meta name="author" content="Barry Steyn">
+    <link rel="shortcut icon" href="theme/img/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="theme/img/apple-touch-icon-144-precomposed.png">
+
+    <title>{{ SITENAME }} {%- if self.title() %} - {% block title %}{% endblock %}{% endif %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ SITEURL }}/theme/css/base.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom Theme CSS -->
+    <link href="{{ SITEURL }}/theme/css/main.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,800|Source+Code+Pro" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <nav id="navbar-top" class="navbar navbar-fixed-top" {% block navbarattributes %}{% endblock %} role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">{% block brand_heading %}{{ SITENAME }}{% endblock %}</a>
+            </div>
+
+            <!-- Nav bar -->
+            <div class="collapse navbar-collapse navbar-right" id="navigation-menu">
+                {% block navbar_contents %}
+                {% endblock %}
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    {% block sections %}{% endblock %}
+
+    <section id="connect" class="container-fluid content-section text-center">
+        <h2>Connect</h2>
+        <div class="divider-grey"></div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-4">
+                <a class="fa fa-envelope-square fa-5x cstm-connect" href=""></a>
+            </div>
+            <div class="col-md-1">
+                <a class="fa fa-linkedin-square fa-5x" href="http://ca.linkedin.com/in/barrysteyn"></a>
+            </div>
+            <div class="col-md-1">
+                <a class="fa fa-github-square fa-5x" href="https://github.com/barrysteyn"></a>
+            </div>
+            <div class="col-md-1">
+                <a class="fa fa-twitter-square fa-5x" href="https://twitter.com/barrysteyn"></a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="footer" class="container-fluid text-center">
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> Barry Steyn. All Rights Reserved.
+    </section>
+
+    <!-- JavaScript -->
+
+    {% block javascript %}{% endblock %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/main.js"></script>
+</body>
+
+</html>

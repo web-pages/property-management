@@ -1,0 +1,53 @@
+//== Title
+//
+//## Style for Title
+
+.title {
+	margin-top: 50px;
+	padding-top: 4.5em;
+	padding-bottom: 4.5em;
+	text-align: center;
+	background: #dae4e4; //Backup for browsers that don't support radial gradient
+	background: radial-gradient(circle farthest-side at center,#FFF 0,#dae4e4 100%);
+	font-size: 1.2em;
+
+	section& {
+		border-bottom: solid @background-color 0.15em;
+	}
+
+	& h1 {
+		font-weight: 600;
+		margin: 0;
+
+		//Increase the font size for desktop
+		@media (min-width: @screen-sm) {
+			font-size: 3em;
+		}
+	}
+
+	& a {
+		text-decoration: none;
+		border: 0;
+
+		&:hover, &:focus, &active {
+			text-decoration: none;
+			background: none;
+		}
+	}
+
+	span {
+		position: relative;
+
+		a {
+			width: 100px;
+			position: absolute;
+			top: 1em;
+			left: 50%;
+			margin-left: -50px;
+			img {
+				border: solid rgba(200,200,200,0.15) 0.2em;
+				height: 100px;
+			}
+		}
+	}
+}
