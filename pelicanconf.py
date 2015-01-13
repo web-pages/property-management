@@ -80,3 +80,11 @@ ARCHIVES_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 CATEGORIES_SAVE_AS = ''
 TAGS_SAVE_AS = ''
+
+#Static paths
+STATIC_PATHS = ['images','static/robots.txt', 'static/CNAME']
+EXTRA_PATH_METADATA = {
+            'static/robots.txt': {'path': 'robots.txt'},
+            'static/CNAME': {'path': 'CNAME'},
+}
+
