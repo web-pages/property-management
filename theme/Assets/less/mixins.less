@@ -17,3 +17,8 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
+
+//Converts a hex color to RGBA
+.hex-to-rgba(@hexColor, @alpha: 1) {
+	@result: rgba(red(@hexColor), green(@hexColor), blue(@hexColor), @alpha);
+}

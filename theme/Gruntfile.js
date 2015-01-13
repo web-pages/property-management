@@ -107,11 +107,12 @@ module.exports = function(grunt) {
                 src: [  
                     "<%= globalConfig.bower_components %>/bootstrap/dist/js/bootstrap.js",
                     "<%= globalConfig.bower_components %>/jquery.easing/js/jquery.easing.js",
-                    "<%= globalConfig.assets %>/js/navbar-offset.js",
+                    //"<%= globalConfig.assets %>/js/navbar-offset.js",
                     "<%= globalConfig.assets %>/js/doctrina-page-scroll.js",
-                    "<%= globalConfig.assets %>/js/doctrina-toc-affix.js",
-                    "<%= globalConfig.assets %>/js/doctrina-scrollspy.js",
-                    "<%= globalConfig.assets %>/js/doctrina-navigation-auto-collapse.js"
+                    //"<%= globalConfig.assets %>/js/doctrina-toc-affix.js",
+                    //"<%= globalConfig.assets %>/js/doctrina-scrollspy.js",
+                    //"<%= globalConfig.assets %>/js/doctrina-navigation-auto-collapse.js"
+                    "<%= globalConfig.assets %>/js/survey.js",
                 ],
                 dest: "<%= globalConfig.temp %>/js/main.js"
             }

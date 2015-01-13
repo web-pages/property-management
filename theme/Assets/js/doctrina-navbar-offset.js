@@ -1,6 +1,6 @@
 //jQuery to collapse the navbar on scroll
 
-(function($) {
+/*(function($) {
     $(function() {
         //If offset attribute is present and set to false, do nothing
         if ($("#navbar-top").attr("offset") !== undefined && $("#navbar-top").attr("offset").toLowerCase() === "false")
@@ -14,4 +14,4 @@
             }
         });    
     });
-})(jQuery);
+})(jQuery);*/
